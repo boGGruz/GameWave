@@ -8,10 +8,8 @@
 - Создание и управление профилем пользователя
 
 ## Технологии
-### FrontEnd
 - HTML/CSS
 - JavaScript
-### BackeEnd
 - Python/Django
 - SQLite
 
