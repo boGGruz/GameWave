@@ -1,0 +1,737 @@
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  margin: 0;
+}
+
+.mainclass{
+  cursor: auto;
+  margin: 16px auto;
+  max-width: 1280px;
+  position: relative;
+
+}
+
+body {
+  background: url(Img/background-site.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-left: 100px;
+  padding-right: 100px;
+  cursor: auto!important;
+  font-family: Roboto,sans-serif;
+  font-size: 16px;
+  line-height: 1.625;
+}
+
+.container{
+  max-width: 1200px;
+  background-color: rgb(22,27,29);
+  position: relative;
+  height: 100vh;
+  border-radius: 20px;
+  box-shadow: 0 0 100px black;
+}
+
+.inner_tabs{
+  -moz-column-gap: 16px;
+  column-gap: 16px;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  max-width: 100%;
+  padding: 0;
+}
+
+.inner_tab1{
+  color: rgb(var(--catalog-inner-tab-fg--active))!important;
+  background: rgb(var(--catalog-inner-tab-bg--active))!important;
+  padding-left: 12px!important;
+  padding-right: 12px!important;
+  transition: transform 0.1s;
+}
+.inner_tab1:hover{
+  transform: scale(1.1);
+}
+
+.title_row_inner{
+  align-items: flex-start;
+  -moz-column-gap: 16px;
+  column-gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 0;
+  max-width: 100%;
+  row-gap: 16px;
+}
+
+.title_row{
+  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    margin-top: 16px;
+}
+
+.inner_tabs {
+  align-items: center;
+  background: rgb(var(--catalog-inner-tab-bg));
+  border: none;
+  border-radius: 8px;
+  color: rgb(var(--catalog-inner-tab-fg));
+  -moz-column-gap: 8px;
+  column-gap: 16px;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  height: 100%;
+  justify-content: center;
+  line-height: 26px;
+  padding: 6px 21px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.rating_positive{
+  --rating-tab-color: var(--green);
+}
+
+.inner_tab2{
+  color: rgb(var(--catalog-inner-tab-fg--active))!important;
+  background: rgb(var(--catalog-inner-tab-bg--active))!important;
+  padding-left: 12px!important;
+  padding-right: 12px!important;
+  transition: transform 0.1s;
+}
+.inner_tab2:hover{
+  transform: scale(1.1);
+}
+
+.inner_tab3{
+  color: rgb(var(--catalog-inner-tab-fg--active))!important;
+  background: rgb(var(--catalog-inner-tab-bg--active))!important;
+  padding-left: 12px!important;
+  padding-right: 12px!important;
+  transition: transform 0.1s;
+}
+.inner_tab3:hover{
+  transform: scale(1.1);
+}
+
+.rating_normal{
+  --rating-tab-color: var(--rating-orange);
+}
+
+.rating_bad{
+  --rating-tab-color: var(--brand-red);
+}
+
+
+
+.preview_button{
+  
+  background: rgb(var(--catalog-inner-tab-bg));
+  --button-bg: var(--gray-1);
+    --button-fg: var(--white);
+    --button-column-gap: 8px;
+    --button-icon-size: 20px;
+    --button-padding: 8px;
+    align-items: center;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 0 0 rgb(var(--form-input-border--focus));
+    color: rgb(var(--button-fg))!important;
+    -moz-column-gap: var(--button-column-gap);
+    column-gap: var(--button-column-gap);
+    cursor: pointer;
+    display: flex;
+    font-family: Roboto,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: 50px;
+    justify-content: center;
+    margin: 0;
+    outline: none;
+    padding: var(--button-padding) calc(var(--button-padding)*2);
+    text-decoration: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    transition: transform 0.1s;
+}
+.preview_button:hover{
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root{
+--article-title-fg: var(--fg-color);
+    --article-title-span-fg: var(--catalog-subtitle-color);
+    --platform-badge-fg: var(--white);
+    --platform-badge-link-fg: var(--gray-2);
+    --platform-badge-link-fg--hover: var(--brand-red);
+    --divider-fg: var(--dark-3);
+    --dropdown-bg: var(--dark-3);
+    --dropdown-shadow: var(--dark-1);
+    --dark-section-bg: var(--dark-1);
+    --article-summary-title: var(--white);
+    --article-summary-summary: var(--light-2);
+    --switch-bg: var(--gray-2);
+    --game-overview-bg: var(--dark-1);
+    --links-bar-bg: var(--dark-3);
+    --form-control-border: var(--gray-2);
+    --top-offset-bg: var(--dark-2);
+    --profile-user-border: var(--dark-3);
+    --profile-user-section-border-top: var(--dark-3);
+    --profile-avatar-border: var(--dark-1);
+    --profile-expander-bg: var(--dark-3);
+    --form-control-select-bg: var(--dark-3);
+    --reply-form-container: var(--gray-2);
+    --reply-form-bg: var(--dark-2);
+    --form-buttons-button-bg: var(--gray-2);
+    --form-buttons-button-bg--hover: var(--gray-2);
+    --form-buttons-button-fill: var(--dark-3);
+    --form-buttons-button-fill--hover: var(--dark-1);
+    --filter-control-bg: var(--dark-3);
+    --simple-list-border-bottom: var(--dark-3);
+    --sg-modal-dialog-bg: var(--dark-2);
+    --table-list-border: var(--dark-3);
+    --table-list-th-bg: var(--dark-3);
+    --pm-text-border: var(--dark-3);
+    --update-bg: var(--dark-2);
+    --update-border: var(--dark-3);
+    --update-new-comments-border: var(--dark-3);
+    --read-more-fade: var(--dark-2);
+    --tiles-item-border: var(--dark-3);
+    --blogs-list-border: var(--dark-3);
+    --right-sidebar-mobile-border: var(--dark-3);
+    --autosuggest-bg: var(--dark-2);
+    --autosuggest-border: var(--dark-3);
+    --simple-editor-attachment-border: var(--gray-2);
+    --simple-editor-attachment-remove-bg: var(--dark-2);
+    --comment-attachment-domain: var(--gray-2);
+    --blockquote-fg: var(--gray-2);
+    --article-header-fg: var(--white);
+    --header-input-bg: var(--dark-2);
+    --sg-abbr-popup-bg: var(--dark-3);
+    --noui-slider-target: var(--dark-3);
+    --editor-focused-bg: var(--dark-3);
+    --editor-status-panel: var(--dark-2);
+    --editor-selection-color: var(--dark-3);
+    --editor-toolbar-bg: var(--dark-3);
+    --comment-bg--new: 255 100 100/.15;
+    --page-content-bg: var(--dark-2);
+    --primary-gray: var(--gray-2);
+    --sidebar-bg: var(--dark-2);
+    --article-card-no-image-bg: #f6f6f6;
+    --article-card-no-image-text: #000;
+    --abbr-border: var(--gray-2);
+    --article-summary-fg: var(--gray-2);
+    --article-epigraph-fg: var(--gray-2);
+    --color-scheme-icon: url(/img/svg/sg/moon-active.svg);
+    --bg-color: var(--background-color);
+    --fg-color: 220 230 235;
+    --focus-color: var(--focus-dark);
+    --outline-btn-border: var(--dark-3);
+    --outline-btn-fg: var(--gray-3);
+    --outline-btn-fg--hover: var(--white);
+    --outline-2-btn-border: var(--dark-3);
+    --outline-2-btn-fg: var(--gray-2);
+    --outline-2-btn-fg--hover: var(--white);
+    --header-gray: var(--gray-2);
+    --divider-color: var(--dark-3);
+    --main-section-color: var(--dark-2);
+    --sidebar-hr-color: var(--white)/.04;
+    --scrollbar-bg: var(--background-color);
+    --scrollbar-fg: var(--gray-1);
+    --button-low-contrast-2-bg: var(--dark-3);
+    --button-low-contrast-2-fg: var(--white);
+    --button-low-contrast-2-bg--hover: var(--dark-3-hover);
+    --podcast-button-bg: var(--dark-1);
+    --podcast-button-fg: var(--white);
+    --podcast-button-border: var(--gray-1);
+    --button-gray-bg: var(--gray-1);
+    --button-gray-bg--hover: var(--gray-1-hover);
+    --burger-bg: var(--background-color);
+    --burger-search-bg: var(--dark-3);
+    --burger-search-fg: var(--white);
+    --burger-search-placeholder: var(--gray-2);
+    --burger-hr-color: var(--gray-1);
+    --burger-item-color: var(--white);
+    --burger-subitem-color: var(--gray-2);
+    --burger-help-color: var(--gray-2);
+    --burger-socials-header-color: var(--gray-2);
+    --burger-color-scheme-label: var(--gray-2);
+    --burger-color-scheme-container: var(--black)/.3;
+    --burger-color-scheme-container-shadow: var(--transparent);
+    --burger-color-scheme-svg-color: var(--gray-2);
+    --burger-color-scheme-active-bg: var(--dark-2);
+    --burger-color-scheme-active-fg: var(--gray-2);
+    --burger-nav-promo-1: 247 147 38;
+    --burger-nav-promo-2: 243 232 13;
+    --social-icons-footer-color: var(--white);
+    --social-icons-footer-color--hover: var(--gray-2);
+    --social-icons-burger-color: var(--white);
+    --announcer-nav-bg: var(--white)/.1;
+    --announcer-nav-fg: var(--white)/.4;
+    --announcer-nav-progress: var(--gray-2);
+    --announcer-nav-active-bg: var(--white);
+    --announcer-nav-active-fg: var(--black);
+    --index-news-bg: var(--dark-3);
+    --index-news-border: var(--dark-4);
+    --index-news-item-title: var(--white);
+    --index-news-item-title--hover: var(--white)/.8;
+    --index-news-item-info: var(--gray-2);
+    --index-news-load-more-fg: var(--white);
+    --index-news-load-more-fg--hover: var(--white)/.6;
+    --index-sidebar-subtitle: var(--gray-2);
+    --index-sidebar-button-fg: var(--white);
+    --index-sidebar-button-bg: var(--dark-3);
+    --index-sidebar-button-shadow: var(--transparent);
+    --index-sidebar-button-bg--hover: var(--dark-4);
+    --index-sidebar-button-bg--hover-mobile: var(--dark-4);
+    --index-sidebar-button-new-bg: var(--dark-4);
+    --index-sidebar-button-new-fg: var(--green);
+    --index-sidebar-button-bg--active: var(--dark-4);
+    --index-sidebar-button-bg--active-mobile: var(--dark-4);
+    --index-sidebar-button-fg--active: var(--white);
+    --youtube-promo-bg: var(--dark-3);
+    --live-comments-bg: var(--dark-2);
+    --live-comments-close: var(--gray-3);
+    --live-comments-scroll-thumb: var(--gray-2);
+    --live-comment-bg: var(--dark-4);
+    --live-comment-bg--hover: var(--dark-3);
+    --live-comment-header-bg: var(--dark-1);
+    --live-comment-fg: var(--white);
+    --live-comment-section-info: var(--gray-2);
+    --live-comment-user-info: var(--white);
+    --live-comment-shadow: var(--transparent);
+    --live-comment-attachments-bg: var(--dark-3);
+    --notifications-separator: var(--dark-3);
+    --notification-bg--hover: var(--dark-3);
+    --notification-actions-button-fg: var(--gray-1);
+    --notification-menu-button-bg: var(--dark-4);
+    --notification-menu-button-bg--hover: var(--gray-1);
+    --notification-menu-button-fg: var(--gray-3);
+    --rating-spinner-button: var(--gray-2);
+    --rating-spinner-fg: var(--white);
+    --rating-spinner-null: var(--gray-1);
+    --rating-spinner-plus-bg: var(--green);
+    --rating-spinner-plus-fg: var(--white);
+    --rating-spinner-minus-bg: var(--brand-red);
+    --rating-spinner-minus-fg: var(--white);
+    --article-card-fg: var(--white);
+    --article-card-date: var(--gray-2);
+    --article-card-bg: 46 47 49;
+    --article-card-shadow: var(--transparent);
+    --user-menu-mobile-bg: var(--dark-3);
+    --user-menu-mobile-hr: var(--gray-1);
+    --user-menu-mobile-item: var(--white);
+    --user-menu-mobile-profile-fg: var(--white);
+    --feed-settings-bg: var(--dark-1);
+    --feed-settings-fg: var(--white);
+    --feed-settings-subtitle: var(--white)/.4;
+    --feed-settings-count-bg: var(--gray-1);
+    --feed-settings-count-fg: var(--white);
+    --feed-settings-button-bg: var(--dark-4);
+    --feed-settings-button-bg--hover: var(--dark-3);
+    --feed-settings-button-fg: var(--gray-3);
+    --feed-settings-button-fg--hover: var(--gray-3);
+    --feed-settings-button-bg--active: var(--gray-2);
+    --feed-settings-button-bg--active--hover: var(--gray-1);
+    --feed-settings-button-fg--active: var(--white);
+    --feed-settings-button-shadow: var(--transparent);
+    --feed-settings-apply-bg: var(--white);
+    --feed-settings-apply-fg: var(--black);
+    --feed-settings-apply-bg--hover: var(--light-1);
+    --empty-feed-button-bg: var(--white);
+    --empty-feed-button-bg--hover: var(--light-1);
+    --empty-feed-button-fg: var(--black);
+    --search-overlay-bg: var(--dark-1)/.95;
+    --search-panel-bg: var(--dark-1);
+    --search-panel-shadow: var(--transparent);
+    --search-panel-result-info-fg: var(--gray-2);
+    --search-panel-result-info-link-fg: var(--white);
+    --search-panel-result-info-link-fg--hover: var(--white)/.8;
+    --search-panel-card-bg--hover: var(--white)/.1;
+    --search-panel-card-info-fg: var(--gray-2);
+    --search-panel-user-card-bg: var(--dark-2);
+    --search-panel-user-card-bg--hover: var(--dark-3);
+    --search-panel-user-card-bg--on-page: var(--dark-3);
+    --search-panel-user-card-bg--on-page--hover: var(--dark-3-hover);
+    --search-panel-user-card-avatar-bg: var(--dark-4);
+    --search-panel-user-card-avatar-fg: var(--gray-2);
+    --search-panel-user-card-date: var(--gray-2);
+    --search-panel-faq-card-icon-bg: var(--white)/.1;
+    --search-panel-category-item-bg: var(--dark-3);
+    --search-panel-category-item-bg--hover: var(--dark-4);
+    --search-panel-category-item-bg--active: var(--light-3);
+    --search-panel-category-item-fg: var(--gray-2);
+    --search-panel-category-item-fg--active: var(--dark-1);
+    --search-panel-category-item-count-fg: var(--white);
+    --search-panel-category-item-count-fg--active: var(--dark-1);
+    --new-comments-bg: var(--white);
+    --new-comments-fg: 20,135,66;
+    --breadcrumbs-fg: var(--white)/.2;
+    --breadcrumbs-fg--hover: var(--white)/.5;
+    --article-section-bg: var(--dark-2);
+    --additional-actions-button-bg: var(--dark-3);
+    --additional-actions-button-bg--hover: var(--dark-4);
+    --additional-actions-button-fg: var(--fg-color);
+    --article-top-info-fg: var(--gray-2);
+    --article-top-info-fg--hover: var(--brand-red);
+    --article-insert-bg: var(--dark-3);
+    --article-caption-fg: var(--gray-2);
+    --article-text-link-fg: var(--brand-red);
+    --article-code-bg: var(--dark-3);
+    --article-quote-bg: var(--dark-3);
+    --article-quote-fg: var(--gray-2);
+    --blog-of-the-week-bg: 38 42 44;
+    --blog-of-the-week-bg-img: url(/img/backdrop-dark.png);
+    --blog-of-the-week-bg-opacity: .1;
+    --blog-of-the-week-trophy-color: var(--trophy);
+    --blog-of-the-week-star-bg: var(--rating-orange);
+    --topic-vote-bg: var(--green)/.8;
+    --topic-vote-bg--hover: var(--green);
+    --topic-vote-fg: var(--white);
+    --content-divider-bg: var(--white)/.1;
+    --tag-bg: var(--dark-1);
+    --tag-fg: var(--white);
+    --tag-bg--hover: var(--dark-3);
+    --tag-fg--hover: var(--white);
+    --tag-bg--active: var(--gray-1);
+    --tag-fg--active: var(--white);
+    --tag-title-fg: var(--gray-3);
+    --code-bg: var(--dark-3);
+    --read-more-header-fg: var(--gray-2);
+    --poll-answer-bg: var(--dark-3);
+    --poll-answer-bg--hover: var(--dark-4);
+    --poll-answer-final-bg: var(--green);
+    --game-link-icon: url(data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512'%3E%3Cpath d='M639.1 357.2c0-6.2-.5-12.5-1.4-18.8L610.2 157C603.5 107.4 581.8 32 319 32 57 32 36.3 106.9 28.7 157.1L1.5 338.4A122 122 0 0 0 121.2 480c46.1-.1 88.4-26.5 108.6-68l13.8-28h152.7l13.7 28a121 121 0 0 0 108.4 68c68.1 0 120.7-56.2 120.7-122.8zm-48 0c0 18-6.4 35.5-18.3 49.5a71.8 71.8 0 0 1-55.2 25.3 72.5 72.5 0 0 1-65.3-41L434 353.8a29.8 29.8 0 0 0-27.8-17.9H233.7a32 32 0 0 0-28.7 17.8l-18.3 37a73 73 0 0 1-66 41.2c-21 0-41-9.4-54.5-25.4a76.3 76.3 0 0 1-17.4-61l27.5-181.3a76.2 76.2 0 0 1 58.5-63.7 842 842 0 0 1 369.4 0 76.1 76.1 0 0 1 58.5 63.8l27.5 181.3c1.5 3.8.9 7.6.9 11.5zM399.1 240c-17.6 0-31.1 14.4-31.1 32s14.4 32 31.1 32 31.1-14.4 31.1-32-12.6-32-31.1-32zm-152-40h-32v-32a24 24 0 0 0-24-24c-12.3 0-24 10.8-24 24v32h-32a24 24 0 0 0 0 48h32v32a24 24 0 0 0 48 0v-32h32a24 24 0 0 0 24-24c0-13.2-9.9-24-24-24zm216-56c-17.6 0-31.1 14.4-31.1 32s14.4 32 31.1 32c17.6 0 31.1-14.4 31.1-32s-12.6-32-31.1-32z' fill='rgb(232 74 74)'/%3E%3C/svg%3E);
+    --news-navigation-bg: var(--dark-3);
+    --abbr-bg: var(--dark-3);
+    --abbr-border: var(--dark-4);
+    --abbr-bg--active: 54 36 34;
+    --abbr-border--active: 65,45,43;
+    --sg-spoiler-bg: var(--dark-3);
+    --sg-spoiler-bg-alt: var(--dark-4);
+    --twitter-bg: var(--background-color);
+    --twitter-border: 51 54 57;
+    --twitter-fg: var(--white);
+    --twitter-link-fg: 107 201 251;
+    --twitter-date-fg: 113 118 123;
+    --twitter-handle-fg: 113 100 113;
+    --twitter-icon-fg: 214 217 219;
+    --news-games-swiper-btn-bg: var(--white);
+    --news-games-swiper-btn-fg: var(--black);
+    --modal-dialog-bg: var(--dark-2);
+    --modal-dialog-border: var(--gray-1);
+    --modal-dialog-button-primary-bg: var(--green);
+    --modal-dialog-button-primary-bg--hover: var(--green-2);
+    --modal-dialog-button-primary-fg: var(--white);
+    --modal-dialog-button-secondary-bg: var(--catalog-inner-tab-bg);
+    --modal-dialog-button-secondary-bg--hover: var(--catalog-inner-tab-bg--hover);
+    --modal-dialog-button-secondary-fg: var(--catalog-inner-tab-fg);
+    --modal-dialog-input-bg: var(--form-input-bg);
+    --modal-dialog-input-fg: var(--form-input-fg);
+    --mobile-modal-close-bg: var(--gray-1);
+    --mobile-modal-close-fg: var(--white);
+    --mobile-modal-close-bg--hover: var(--gray-1-hover);
+    --comment-bg: var(--dark-3);
+    --comment-bg--highlight: var(--brand-red)/.1;
+    --comment-shadow: none;
+    --comment-line-bg: url(/img/sprites/comment-line-dark.png);
+    --comment-link-bg: var(--dark-2);
+    --comment-link-bg--hover: var(--dark-3-hover);
+    --comment-form-textarea-bg: var(--dark-3);
+    --comment-form-textarea-fg: var(--fg-color);
+    --comment-form-textarea-border: none;
+    --comment-form-button-bg: var(--white);
+    --comment-form-button-fg: var(--black);
+    --tager-hot-popup-bg: var(--dark-3);
+    --updater-bg: var(--dark-3);
+    --updater-shadow: none;
+    --comments-line-color: var(--gray-1);
+    --game-rate-submit-button-bg: var(--white);
+    --game-rate-submit-button-fg: var(--black);
+    --editorjs-panel-bg: var(--dark-3);
+    --editorjs-delete-confirm: 65 31 31;
+    --autosuggest-bg: var(--dark-3);
+    --autosuggest-border: var(--gray-1);
+    --form-buttons-button-bg: var(--dark-4);
+    --form-buttons-button-bg--hover: var(--gray-1);
+    --switch-bg: var(--gray-1);
+    --backdrop-image: url(/img/backdrop.png);
+    --catalog-top-bg: var(--dark-1);
+    --catalog-content-bg: var(--dark-2);
+    --catalog-breadcrumbs-fg: var(--gray-1);
+    --green-outline-btn-fg: var(--gray-3);
+    --catalog-tab-fg: var(--gray-2);
+    --catalog-tab-fg--hover: var(--white);
+    --catalog-tab-sup: var(--gray-3);
+    --catalog-tab-transparent-bg: var(--dark-1)/.3;
+    --catalog-tab-transparent-bg--hover: var(--dark-1)/.4;
+    --catalog-inner-tab-fg: var(--gray-3);
+    --catalog-inner-tab-bg: var(--dark-3);
+    --catalog-inner-tab-fg--hover: var(--white);
+    --catalog-inner-tab-bg--hover: var(--dark-3-hover);
+    --catalog-inner-tab-fg--active: var(--white);
+    --catalog-inner-tab-bg--active: var(--gray-1);
+    --navigation-button-bg: var(--gray-1);
+    --navigation-button-fg: var(--gray-3);
+    --navigation-button-bg--hover: var(--gray-2);
+    --navigation-button-fg--hover: var(--white);
+    --navigation-button-bg--disabled: var(--dark-3);
+    --navigation-button-fg--disabled: var(--gray-1);
+    --catalog-backdrop-border: var(--gray-1);
+    --catalog-subtitle-color: var(--gray-1);
+    --read-main-section-title-fg: var(--white);
+    --read-main-section-divider-color: var(--gray-1);
+    --read-main-section-counts-bg: 76,80,82,.6;
+    --read-main-section-counts-fg: var(--white);
+    --material-card-bg: var(--dark-3);
+    --material-card-author-fg: var(--gray-2);
+    --material-card-author-fg--hover: var(--brand-red);
+    --material-card-title-fg--hover: var(--brand-red);
+    --material-card-attribute-fg--hover: var(--brand-red);
+    --material-card-subtitle-fg: var(--gray-2);
+    --material-card-section-fg: var(--white);
+    --rating-bg--null: var(--gray-1);
+    --rating-bg--positive: var(--green);
+    --rating-bg--negative: var(--red-rating);
+    --compilation-shadow-1: var(--dark-3-hover);
+    --compilation-shadow-2: var(--dark-3);
+    --form-input-bg: var(--dark-3);
+    --form-input-fg: var(--white);
+    --form-input-placeholder: var(--gray-2);
+    --form-input-border: var(--dark-4);
+    --form-input-border--focus: var(--focus-dark);
+    --form-datepicker-icon: url(data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M152 64h144V24a24 24 0 1 1 48 0v40h40a64 64 0 0 1 64 64v320a64 64 0 0 1-64 64H64a64 64 0 0 1-64-64V128a64 64 0 0 1 64-64h40V24a24 24 0 1 1 48 0v40zM48 448a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V192H48v256z' fill='%23FFF'/%3E%3C/svg%3E);
+    --form-select-icon: url(data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m3.6 7.8 8.4 8.4 8.4-8.4' stroke='%23fff' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E);
+    --form-hint-fg: var(--gray-1);
+    --checkbox-border: var(--gray-1);
+    --checkbox-border--hover: var(--gray-2);
+    --hljs-keyword: 174 129 255;
+    --hljs-operator: 248 248 242;
+    --hljs-pattern-match: 249 38 114;
+    --hljs-pattern-constructor: 97 174 238;
+    --hljs-function: 102 217 239;
+    --hljs-params: 228 86 74;
+    --hljs-typing: 80 161 78;
+    --hljs-module: 126 87 194;
+    --hljs-constructor: 64 120 242;
+    --hljs-constructor-string: 156 204 101;
+    --hljs-comment: 117 113 94;
+    --hljs-doctag: 161 239 228;
+    --hljs-variable: 249 38 114;
+    --hljs-literal: 253 151 31;
+    --hljs-string: 166 226 46;
+    --hljs-built_in: 161 239 228;
+    --hljs-number: 253 151 31;
+    --hljs-symbol: 253 151 31;
+    --game-breadcrumbs-fg: var(--gray-1);
+    --game-suggest-fix-bg: var(--dark-3);
+    --game-suggest-fix-fg: var(--gray-3);
+    --game-suggest-fix-bg--hover: var(--dark-3-hover);
+    --game-suggest-fix-fg--hover: var(--white);
+    --game-suggest-backdrop-fg: var(--gray-2);
+    --game-facts-number-border: var(--gray-1);
+    --game-info-card-bg: var(--dark-3);
+    --game-info-card-bg-light: var(--dark-3-hover);
+    --game-info-card-my-status-bg: var(--gray-1);
+    --game-info-card-my-status-bg--hover: 75 83 87;
+    --game-info-card-rating-border: var(--dark-4);
+    --game-info-card-user-rating-empty-star: var(--gray-1);
+    --game-info-card-small-user-rating-empty-star: var(--gray-1);
+    --game-info-card-info-value-fg: var(--gray-3);
+    --game-info-card-user-rating-clear-fg: var(--gray-1);
+    --game-info-card-rating-gray: var(--gray-1);
+    --game-rating-graph-bg: var(--gray-2);
+    --short-comment-bg: var(--dark-3);
+    --news-card-border: var(--dark-3);
+    --profile-bg: var(--dark-1);
+    --profile-avatar-background: var(--dark-4);
+    --profile-avatar-color: var(--dark-3);
+    --profile-last-online-fg: var(--gray-1);
+    --profile-header-buttons-color: var(--gray-3);
+    --profile-header-count-fg: var(--gray-1);
+    --profile-info-fg: var(--white);
+    --profile-stats-container-bg: var(--dark-2);
+    --profile-stats-container-border: var(--gray-1);
+    --profile-stats-header-bg: var(--dark-3);
+    --profile-subscribe-button-bg: var(--dark-3);
+    --profile-subscribe-button-bg--hover: var(--dark-4);
+    --profile-subscribe-button-fg: var(--white);
+    --games-page-page-info-fg: var(--gray-1);
+    --list-type-icon-fg: var(--gray-1);
+    --list-type-icon-fg--hover: 76 83 87;
+    --profile-subscribe-cross-fg: var(--gray-3);
+    --my-top-empty-card-bg: var(--dark-3);
+    --my-top-empty-card-bg--hover: var(--dark-3-hover);
+    --my-top-empty-card-fg: var(--gray-1);
+    --game-search-border-bottom: var(--dark-3-hover);
+    --game-search-card-bg--hover: var(--dark-3-hover);
+    --notify-separator: var(--dark-3-hover);
+    --game-status-inactive-bg: var(--gray-1);
+    --game-status-inactive-bg--hover: 75 83 87;
+    --game-watch-modal-clear-fg: var(--gray-1);
+    --game-status-disbled-opacity: .3;
+    --game-status-disabled-fg: var(--gray-1);
+    --game-status-active-fg: var(--white);
+    --game-watch-header-disabled-fg: var(--gray-1);
+    --game-watch-empty-star: var(--gray-1);
+    --pagination-inactive-bg: var(--dark-3);
+    --pagination-inactive-bg--hover: var(--dark-3-hover);
+    --pagination-inactive-fg: var(--gray-2);
+    --pagination-inactive-fg--hover: var(--white);
+    --pagination-active-bg: var(--brand-red);
+    --pagination-active-fg: var(--white);
+    --pagination-prev-next-bg: var(--gray-1);
+    --pagination-prev-next-fg: var(--white);
+    --pagination-prev-next-bg--hover: var(--brand-red);
+    --pagination-prev-next-fg--hover: var(--white);
+    --noui-slider-tooltip-bg: var(--gray-1);
+    --game-filters-select-bg: var(--gray-1);
+    --game-filters-select-bg--hover: var(--gray-2);
+    --game-filters-letters-fg: var(--gray-2);
+    --game-filters-letters-button-bg: var(--dark-3);
+    --game-filters-letters-button-fg: var(--gray-2);
+    --game-filters-letters-button-bg--active: var(--gray-1);
+    --game-filters-letters-button-fg--active: var(--white);
+    --game-filters-letters-button-bg--hover: var(--dark-3-hover);
+    --game-filters-add-bg: var(--dark-3);
+    --game-filters-add-fg: var(--gray-2);
+    --game-filters-add-bg--hover: var(--dark-3-hover);
+    --game-filters-add-svg-fill: var(--white);
+    --game-filters-reset-border: var(--dark-3);
+    --game-filters-reset-fg: var(--gray-3);
+    --game-filters-reset-fg--hover: var(--white);
+    --calendar-dummy-day-bg: 33 37 39;
+    --calendar-empty-day-bg: var(--dark-3);
+    --calendar-empty-date-bg: var(--dark-3-hover);
+    --calendar-empty-date-fg: var(--gray-2);
+    --calendar-pagination-bullet-bg: var(--gray-1);
+    --calendar-switcher-year-fg: var(--gray-1);
+    --review-header-bg: var(--dark-1);
+    --review-header-fg: var(--white);
+    --review-body-bg: var(--dark-3);
+    --review-title-fg: var(--white);
+    --review-spoiler-bg: var(--dark-3-hover);
+    --rating-tab-bg--hover: var(--dark-3-hover);
+    --low-contrast-btn-fg: var(--gray-1);
+    --low-contrast-btn-fg--active: var(--gray-2);
+    --pm-section-bg: var(--dark-2);
+    --pm-new-button-bg: var(--gray-1);
+    --pm-new-button-fg: var(--white);
+    --pm-new-button-bg--hover: var(--gray-1-hover);
+    --pm-dialogue-item-bg--hover: var(--dark-3);
+    --pm-dialogue-item-title: var(--white);
+    --pm-dialogue-item-user-info: var(--gray-2);
+    --pm-dialogue-item-comments--hover: var(--gray-2);
+    --pm-dialogue-item-last-message: var(--gray-2);
+    --pm-menu-bg: var(--gray-1);
+    --pm-menu-fg: var(--gray-3);
+    --pm-menu-fg--hover: var(--white);
+    --pm-message-bg: var(--dark-3);
+    --range-slider-track-bg: var(--white);
+    --panzoom-button-bg: var(--gray-1);
+    --panzoom-button-bg--hover: var(--gray-1-hover);
+    --panzoom-button-fg: var(--white);
+    --series-scheme-inactive-line: var(--gray-1);
+    --series-scheme-active-title: var(--white);
+}
+
+:root {
+  --dvh: 1vh;
+  --transition-curve: cubic-bezier(.45,0,.55,1);
+  --black: 0 0 0;
+  --transparent: var(--black)/0;
+  --background-color: 22 27 29;
+  --green: 0 168 121;
+  --green-2: 0 135 97;
+  --rating-orange: 221 148 51;
+  --brand-red: 236 34 39;
+  --active-red: 239 89 98;
+  --dark-red: 176 25 28;
+  --red-rating: 235 33 46;
+  --yellow-rating: 233 155 33;
+  --red-100: 235 33 46;
+  --blue-2: 45 156 219;
+  --blue-2--hover: 32 130 188;
+  --dark-1: 22 27 29;
+  --dark-2: 30 34 36;
+  --dark-3: 38 42 44;
+  --dark-3-hover: 45 49 51;
+  --dark-4: 47 52 55;
+  --light-1: 222 224 227;
+  --light-2: 243 244 245;
+  --light-3: 232 234 235;
+  --white: 255 255 255;
+  --gray-1: 65 71 74;
+  --gray-1-hover: 81 88 92;
+  --gray-2: 116 124 129;
+  --gray-2-hover: 99 108 112;
+  --gray-3: 176 180 184;
+  --gray-3-hover: 162 165 168;
+  --gray-4: 200 202 204;
+  --trophy: 119 71 255;
+  --focus-dark: 56,61,110;
+  --focus-light: 187,194,240;
+  --section-vertical-padding: 32px;
+  --section-horizontal-padding: 32px;
+  --modal-horizontal-padding: 24px;
+  --modal-top-padding: 48px;
+  --modal-bottom-padding: 48px;
+  --wishlist-color: var(--yellow-rating);
+  --wishlist-color--hover: 206 130 11;
+  --playing-color: var(--trophy);
+  --playing-color--hover: 97 58 209;
+  --beaten-color: var(--green);
+  --beaten-color--hover: var(--green-2);
+  --sleep-color: var(--blue-2);
+  --sleep-color--hover: var(--blue-2--hover);
+}
