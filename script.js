@@ -9,6 +9,9 @@ const changeNickButton = document.getElementById('changeNickButton');
 const overlay = document.getElementById('overlay');
 const changeUsername = document.getElementById('change-username');
 const closeChange = document.getElementById('closechange');
+const openButtonlibrary = document.getElementById("openButtonlibrary");
+const modallibrary = document.getElementById("modal-library");
+const closelibrary = document.getElementById("close-library");
 
 let loginFormVisible = false;
 
@@ -43,15 +46,6 @@ accountOption.addEventListener('click', () => {
     loginOption.style.display = 'none'
 });
 
-window.addEventListener('click', (event) => {
-    if (event.target === loginPopup) {
-        loginPopup.style.display = 'none';
-        registrationForm.style.display = 'none';
-        loginForm.style.display = 'none';
-        loginFormVisible = false;
-    }
-});
-
 
 changeNickButton.addEventListener('click', () => {
     overlay.style.display = 'block';
@@ -60,9 +54,19 @@ changeNickButton.addEventListener('click', () => {
 closeChange.addEventListener('click', () => {
     overlay.style.display = 'none';
 });
-  
-overlay.addEventListener('click', (event) => {
-    if (event.target === overlay) {
-      overlay.style.display = 'none';
-    }
+
+
+openButtonlibrary.addEventListener('click', () => {
+    modallibrary.style.display = 'block';
 });
+
+closelibrary.addEventListener('click', () => {
+    modallibrary.style.display = 'none';
+});
+
+window.addEventListener('click', (event) => {
+  if (event.target === modallibrary) {
+    modallibrary.style.display = 'none';
+  }
+});
+
