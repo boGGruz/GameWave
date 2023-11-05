@@ -21,7 +21,7 @@
         <nav class="_header_navigation" aria-label="разделы сайт">
             <a class="_header_navigation_item" href="#">Игры</a>
             <a class="_header_navigation_item" href="#">Отзывы</a>
-            <a class="_header_navigation_item" href="#">Помощь</a>
+            <a class="_header_navigation_item" href="#">О сайте</a>
         </nav>
         <div class="_header_right_buttons">
             <button class="_header__btns" aria-label="Поиск" data-search-panel>
@@ -79,18 +79,29 @@
                 <h1 class="username-row">Ryan Gosling</h1>
             </div>
             <div class="change-nick">
-              <a href="" class="change-nick__button">
+              <button class="change-nick__button" id="changeNickButton">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" height="24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                 </svg>
-              </a>
-            </div>                      
+              </button>
+            </div>
+
+            <div class="overlay" id="overlay">
+              <div class="changeusername" id="change-username">
+                <h2>Изменить имя пользователя</h2>
+                <input type="text" id="newUsername" placeholder="Новое имя пользователя">
+                <button id="saveUsername">Сохранить</button>
+                <button id="closechange">Закрыть</button>
+              </div>
+            </div>
+
           </div>
           <div class="info-row">
               <button class="about-user">Обо мне</button>
           </div>
         </div>
       </div>
+
       <div class="stats-grid">
         <section class="profile-content">
           <div class="top-header">
