@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск игр по фильтру, по жанрам и платформам | GameWave</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,500;0,600;1,700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'Site/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'Site/css/registration.css' %}">
+    <link rel="stylesheet" href="{% static 'Site/css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'Site/css/logout.css' %}">
+</head>
+<body>
+{% block head-hat %}
+<header class="_header">
+    <div class="_header_wrapper" role="navigation">
+        <a class="_header_logo" href="{% url 'home' %}">
+            <img src="{% static 'Site/img/GameWave.png' %}" alt="">
+        </a>
+        <nav class="_header_navigation" aria-label="разделы сайт">
+            <a class="_header_navigation_item" href="{% url 'home' %}">Игры</a>
+            <a class="_header_navigation_item" href="#">Отзывы</a>
+            <a class="_header_navigation_item" href="{% url 'about' %}">О сайте</a>
+        </nav>
+        <div class="_header_right_buttons">
+            {% if user.is_authenticated %}
+            <button class="_header__btns" aria-label="Личный кабинет" href="#">
+                <a href="{% url 'profile' %}"><img src="{% static 'Site/img/user.png' %}" alt="" height="30px"
+                                                   width="30px"></a>
+            </button>
+            <a class="nav-item nav-link__exit" href="{% url 'logout' %}">Выход</a>
+            {% else %}
+            <a class="nav-item nav-link" href="{% url 'login' %}">Вход</a>
+            <a class="nav-item nav-link" href="{% url 'register' %}">Регистрация</a>
+            {% endif %}
+        </div>
+    </div>
+</header>
+{% endblock head-hat %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }}">
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+{% block content %}
+{% endblock %}
+</body>
+</html>
