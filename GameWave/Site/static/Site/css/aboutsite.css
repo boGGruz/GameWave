@@ -5,6 +5,7 @@
     cursor: auto;
     height: 100vh;
     background-size: cover;
+    overflow: auto;
 }
 
 .content{
@@ -18,7 +19,7 @@
 }
 
 .namepage{
-    font-size: 60px;
+    font-size: 6vh;
     font-weight: 500;
     padding-left: 40px;
     padding-top: 30px;
@@ -27,34 +28,34 @@
 
 .About-site{
     padding-top: 30px;
-    font-size: 30px;
+    font-size: 3vh;
     padding-left: 40px;
     padding-right: 40px;
     text-align: justify;
 }
 
 .team{
-    font-size: 50px;
+    font-size: 5vh;
     font-weight: 500;
     padding-left: 40px;
     padding-top: 50px;
 }
 
 .Arsen{
-    font-size: 30px;
+    font-size: 3vh;
     padding-left: 40px;
     list-style-type: square;
     padding-top: 30px;
 }
 
 .Bogdan{
-    font-size: 30px;
+    font-size: 3vh;
     padding-left: 40px;
     list-style-type: square;
 }
 
 .Semyon{
-    font-size: 30px;
+    font-size: 3vh;
     padding-left: 40px;
     list-style-type: square;
 }
