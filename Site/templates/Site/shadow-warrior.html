@@ -1,12 +1,15 @@
 {% extends 'Site/basegames.html' %}
 {% load static %}
 {% block content %}
-<head>
-    <style>
-        .dosbox-container > .dosbox-overlay { background: url("{% static 'Site/img/Shadow-Warrior.webp' %}"); background-size: 560px 400px ;}
-    </style>
-</head>
-<body>
+    <head>
+        <style>
+            .dosbox-container > .dosbox-overlay {
+                background: url("{% static 'Site/img/Shadow-Warrior.webp' %}");
+                background-size: 560px 400px;
+            }
+        </style>
+    </head>
+    <body>
     <main class="_main">
         <div class="_main_wrapper" role="main">
             <div class="_game_window">
@@ -29,5 +32,5 @@
             </div>
         </div>
     </main>
-</body>
+    </body>
 {% endblock %}

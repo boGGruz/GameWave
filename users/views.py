@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
-from .forms import ImageForm
+from django.views.generic.detail import DetailView
+from .models import Profile
 
 
 def register(request):
@@ -18,20 +19,22 @@ def register(request):
     return render(request, 'users/register.html', {'form': form})
 
 
-def image_upload_view(request):
-    """Process images uploaded by users"""
-    if request.method == 'POST':
-        form = ImageForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            # Get the current instance object to display in the template
-            img_obj = form.instance
-            return render(request, 'Site/profile.html', {'form': form, 'img_obj': img_obj})
-    else:
-        form = ImageForm()
-    return render(request, 'Site/profile.html', {'form': form})
-
-
 @login_required
 def profile(request):
-    return render(request, 'Site/profile.html')
+    if request.method == 'POST':
+        p_form = ProfileUpdateForm(request.POST,
+                                   request.FILES,
+                                   instance=request.user.profile)
+        if p_form.is_valid():
+            p_form.save()
+            messages.success(request, f'Your account has been updated!')
+            return redirect('profile')
+
+    else:
+        p_form = ProfileUpdateForm(instance=request.user.profile)
+
+    context = {
+        'p_form': p_form
+    }
+
+    return render(request, 'Site/profile.html', context)
