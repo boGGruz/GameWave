@@ -2,32 +2,25 @@
 {% load static %}
 {% block content %}
 <head>
+    <script src="{% static 'Site/js/js-dos.js' %}"></script>
+    <link href="{% static 'Site/js/js-dos.css' %}" rel="stylesheet">
     <style>
         .dosbox-container > .dosbox-overlay { background: url("{% static 'Site/img/duke.webp' %}"); background-size: 560px 400px ;}
     </style>
 </head>
 <body>
-    <main class="_main">
-        <div class="_main_wrapper" role="main">
-            <div class="_game_window">
-                <div id="dosbox"></div>
-                <br/>
-                <button onclick="dosbox.requestFullScreen();">Make fullscreen</button>
-
-                <script type="text/javascript" src="https://js-dos.com/cdn/js-dos-api.js"></script>
-                <script type="text/javascript">
-                    var dosbox = new Dosbox({
-                        id: "dosbox",
-                        onload: function (dosbox) {
-                            dosbox.run("{% static 'Site/games/duke.zip' %}", "./DUKE3D.EXE");
-                        },
-                        onrun: function (dosbox, app) {
-                            console.log("App '" + app + "' is runned");
-                        }
-                    });
+<main class="_main">
+    <div class="_main_wrapper" role="main">
+        <div class="_game_window">
+            <div id="jsdos">
+                <script>
+                    emulators.pathPrefix = "{% static 'Site/js/' %}";
+                    Dos(document.getElementById("jsdos"))
+                        .run("{% static 'Site/games/DUKE3D.jsdos' %}");
                 </script>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 </body>
 {% endblock %}

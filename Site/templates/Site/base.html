@@ -16,41 +16,43 @@
     <link rel="stylesheet" href="{% static 'Site/css/registration.css' %}">
     <link rel="stylesheet" href="{% static 'Site/css/login.css' %}">
     <link rel="stylesheet" href="{% static 'Site/css/logout.css' %}">
+    <script src="{% static 'Site/js/js-dos.js' %}"></script>
+
 </head>
 <body>
 {% block head-hat %}
-<header class="_header">
-    <div class="_header_wrapper" role="navigation">
-        <a class="_header_logo" href="{% url 'home' %}">
-            <img src="{% static 'Site/img/GameWave.png' %}" alt="">
-        </a>
-        <nav class="_header_navigation" aria-label="разделы сайт">
-            <a class="_header_navigation_item" href="{% url 'home' %}">Игры</a>
-            <a class="_header_navigation_item" href="#">Отзывы</a>
-            <a class="_header_navigation_item" href="{% url 'about' %}">О сайте</a>
-        </nav>
-        <div class="_header_right_buttons">
-            {% if user.is_authenticated %}
-            <button class="_header__btns" aria-label="Личный кабинет" href="#">
-                <a href="{% url 'profile' %}"><img src="{% static 'Site/img/user.png' %}" alt="" height="30px"
-                                                   width="30px"></a>
-            </button>
-            <a class="nav-item nav-link__exit" href="{% url 'logout' %}">Выход</a>
-            {% else %}
-            <a class="nav-item nav-link" href="{% url 'login' %}">Вход</a>
-            <a class="nav-item nav-link" href="{% url 'register' %}">Регистрация</a>
-            {% endif %}
+    <header class="_header">
+        <div class="_header_wrapper" role="navigation">
+            <a class="_header_logo" href="{% url 'home' %}">
+                <img src="{% static 'Site/img/GameWave.png' %}" alt="">
+            </a>
+            <nav class="_header_navigation" aria-label="разделы сайт">
+                <a class="_header_navigation_item" href="{% url 'home' %}">Игры</a>
+                <a class="_header_navigation_item" href="#">Отзывы</a>
+                <a class="_header_navigation_item" href="{% url 'about' %}">О сайте</a>
+            </nav>
+            <div class="_header_right_buttons">
+                {% if user.is_authenticated %}
+                    <button class="_header__btns" aria-label="Личный кабинет" href="#">
+                        <a href="{% url 'profile' %}"><img src="{% static 'Site/img/user.png' %}" alt="" height="30px"
+                                                           width="30px"></a>
+                    </button>
+                    <a class="nav-item nav-link__exit" href="{% url 'logout' %}">Выход</a>
+                {% else %}
+                    <a class="nav-item nav-link" href="{% url 'login' %}">Вход</a>
+                    <a class="nav-item nav-link" href="{% url 'register' %}">Регистрация</a>
+                {% endif %}
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 {% endblock head-hat %}
 
 {% if messages %}
-{% for message in messages %}
-<div class="alert alert-{{ message.tags }}">
-    {{ message }}
-</div>
-{% endfor %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
 {% endif %}
 {% block content %}
 {% endblock %}
