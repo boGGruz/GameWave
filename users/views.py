@@ -1,9 +1,7 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserRegisterForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
-from django.views.generic.detail import DetailView
-from .models import Profile
 
 
 def register(request):
@@ -27,7 +25,7 @@ def profile(request):
                                    instance=request.user.profile)
         if p_form.is_valid():
             p_form.save()
-            messages.success(request, f'Your account has been updated!')
+            messages.success(request, f'Ваш профиль успешно обновлен.')
             return redirect('profile')
 
     else:
