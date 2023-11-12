@@ -134,7 +134,7 @@ input[type="submit"] {
     margin: 0 auto;
     background-color: rgb(22, 27, 29);
     position: relative;
-    height: 91.5vh;
+    height: 110vh;
     box-shadow: 0 0 100px black;
     top: 8.5vh;
 }
@@ -251,6 +251,11 @@ input[type="submit"] {
     overflow: hidden;
 }
 
+.stats-grid {
+    position: relative;
+    bottom: 5vh;
+}
+
 .my-top__header {
     font-size: 3vw;
     font-weight: 900;
@@ -284,14 +289,13 @@ input[type="submit"] {
     margin-bottom: 1vh;
 }
 
-.stats-container__grid {
-    column-gap: 16px;
-    display: grid;
-    grid-template-columns: 0.5vh auto;
-    grid-template-rows: repeat(4, 4vh);
-    row-gap: 0.9vh;
+.stats-container__column {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
     font-size: 1.5vw;
     justify-content: center;
+    align-items: center;
 }
 
 .fa-solid {

@@ -1,17 +1,37 @@
 {% extends 'Site/basegames.html' %}
 {% load static %}
 {% block content %}
-<head>
-    <script src="{% static 'Site/js/js-dos.js' %}"></script>
-    <link href="{% static 'Site/js/js-dos.css' %}" rel="stylesheet">
-    <style>
-        .dosbox-container > .dosbox-overlay { background: url("{% static 'Site/img/playstation-ps1-doom.webp' %}"); background-size: 560px 400px ;}
-    </style>
-</head>
-<body>
-<main class="_main">
-    <div class="_main_wrapper" role="main">
-        <div class="_game_window">
+    <head>
+        <script src="{% static 'Site/js/js-dos.js' %}"></script>
+        <link href="{% static 'Site/js/js-dos.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'Site/css/games.css' %}">
+    </head>
+    <body>
+    <main class="_main1">
+        <div class="_main_wrapper" role="main1">
+            <div class="_game_window">
+                <section class="_header1">
+                    <h1 class="game-name">Doom</h1>
+                    <div class="top-content">
+                        <img class="_wallpaper_resolution" src="{% static 'Site/img/playstation-ps1-doom.webp' %}"
+                             alt="">
+                        <ul class="info-description">
+                            <li class="date">Дата выхода: 10 декабря 1993 года</li>
+                            <li class="creator">Разработчик: id Software</li>
+                            <li class="platform">Платформа: MS-DOS</li>
+                            <li class="genres">Жанр: Шутер от первого лица</li>
+                        </ul>
+                    </div>
+                    <div class="full-description">
+                        <h2 class="_description-title">Описание</h2>
+                        <p class="_description">
+                            Doom - это шутер от первого лица 1993 года (FPS), разработанный id Software для MS-DOS.
+                            Игроки берут на себя роль космического десантника, известного в народе как Doomguy,
+                            пробивающегося сквозь орды вторгающихся демонов из ада.
+                        </p>
+                    </div>
+                </section>
+            </div>
             <div id="jsdos">
                 <script>
                     emulators.pathPrefix = "{% static 'Site/js/' %}";
@@ -20,7 +40,7 @@
                 </script>
             </div>
         </div>
-    </div>
-</main>
-</body>
+        </div>
+    </main>
+    </body>
 {% endblock %}

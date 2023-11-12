@@ -1,17 +1,38 @@
 {% extends 'Site/basegames.html' %}
 {% load static %}
 {% block content %}
-<head>
-    <script src="{% static 'Site/js/js-dos.js' %}"></script>
-    <link href="{% static 'Site/js/js-dos.css' %}" rel="stylesheet">
-    <style>
-        .dosbox-container > .dosbox-overlay { background: url("{% static 'Site/img/duke.webp' %}"); background-size: 560px 400px ;}
-    </style>
-</head>
-<body>
-<main class="_main">
-    <div class="_main_wrapper" role="main">
-        <div class="_game_window">
+    <head>
+        <script src="{% static 'Site/js/js-dos.js' %}"></script>
+        <link href="{% static 'Site/js/js-dos.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'Site/css/games.css' %}">
+    </head>
+    <body>
+    <main class="_main1">
+        <div class="_main_wrapper" role="main1">
+            <div class="_game_window">
+                <section class="_header1">
+                    <h1 class="game-name">Duke Nukem 3D</h1>
+                    <div class="top-content">
+                        <img class="_wallpaper_resolution" src="{% static 'Site/img/duke.webp' %}"
+                             alt="">
+                        <ul class="info-description">
+                            <li class="date">Дата выхода: 29 января 1996 года</li>
+                            <li class="creator">Разработчик: 3D Realms</li>
+                            <li class="platform">Платформа: MS-DOS</li>
+                            <li class="genres">Жанр: Шутер от первого лица</li>
+                        </ul>
+                    </div>
+                    <div class="full-description">
+                        <h2 class="_description-title">Описание</h2>
+                        <p class="_description">
+                            Duke Nukem 3D - это классический шутер от первого лица, выпущенный в 1996 году. Игрок
+                            управляет персонажем Дюком Нюкемом, мускулистым и агрессивным героем, который борется с
+                            инопланетными захватчиками и защищает Землю от разрушения. Игра состоит из 28 уровней, в
+                            каждом из которых игрок должен выполнить ряд задач, сражаться с врагами и собирать бонусы.
+                        </p>
+                    </div>
+                </section>
+            </div>
             <div id="jsdos">
                 <script>
                     emulators.pathPrefix = "{% static 'Site/js/' %}";
@@ -20,7 +41,7 @@
                 </script>
             </div>
         </div>
-    </div>
-</main>
-</body>
+        </div>
+    </main>
+    </body>
 {% endblock %}

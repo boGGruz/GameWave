@@ -60,7 +60,7 @@ button:hover{
     background-image: url('../img/background_1.webp');
     background-size: cover;
     background-repeat: repeat;
-    overflow: auto;
+    overflow: hidden;
     height: 100vh;
 }
 ._main_wrapper {
@@ -68,7 +68,7 @@ button:hover{
     margin: 0 auto;
     background-color: rgb(22, 27, 29);
     position: relative;
-    height: 91.5vh;
+    height: 150vh;
     box-shadow: 0 0 100px black;
     top: 8.5vh;
 }
