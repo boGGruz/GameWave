@@ -32,7 +32,7 @@
     margin-left: 1vw;
     display: flex;
     flex-direction: row;
-
+    margin-top: 0;
 }
 
 .comment-username {
@@ -42,7 +42,8 @@
 }
 
 .comment-text {
-    font-size: 1.5vw;
+    margin-top: 1.85vw;
+    font-size: 1vw;
 }
 
 .add-comment {
@@ -60,8 +61,6 @@
     cursor: pointer;
     border-radius: 5px;
     margin-left: 1vw;
-    top: 5vh;
-    right: 21vw
 }
 
 .comment-form {

@@ -5,6 +5,14 @@
     <div class="_main1">
         <div class="content">
             <h1 class="comments-title">Комментарии</h1>
+
+            <h2 class="add-comment">Оставить комментарий</h2>
+            <form method="post" action="{% url 'comment_page' %}" class="comment-form">
+                {% csrf_token %}
+                {{ form.comment_text }}
+                <button class="add-comment__button" type="submit">Оставить комментарий</button>
+            </form>
+
             {% for comment in comments %}
                 <div class="comment">
                     <p class="comment-username"
@@ -13,14 +21,25 @@
                     <p class="comment-text">{{ comment.comment_text }}</p>
                 </div>
             {% endfor %}
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if comments.has_previous %}
+                            <a href="?page=1">&laquo; первая</a>
+                            <a href="?page={{ comments.previous_page_number }}">предыдущая</a>
+                        {% endif %}
 
-            <h2 class="add-comment">Оставить комментарий</h2>
-            <form method="post" action="{% url 'comment_page' %}" class="comment-form">
-                {% csrf_token %}
-                {{ form.comment_text }}
-                <button class="add-comment__button" type="submit">Оставить комментарий</button>
-            </form>
+                        <span class="current">
+                            Страница {{ comments.number }} из {{ comments.paginator.num_pages }}.
+                        </span>
+
+                        {% if comments.has_next %}
+                            <a href="?page={{ comments.next_page_number }}">следующая</a>
+                            <a href="?page={{ comments.paginator.num_pages }}">последняя &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div>
         </div>
     </div>
+
     </body>
 {% endblock %}

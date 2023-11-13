@@ -2,7 +2,7 @@ import random
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .forms import CommentForm
 from .models import Comment
 from users.models import Profile
@@ -54,7 +54,18 @@ def heroes(request):
 
 @login_required
 def comment_page(request):
-    comments = Comment.objects.all()
+    comments_list = Comment.objects.all().order_by('-timestamp')
+
+    paginator = Paginator(comments_list, 10)  # По 10 комментариев на странице
+    page = request.GET.get('page')
+
+    try:
+        comments = paginator.page(page)
+    except PageNotAnInteger:
+        comments = paginator.page(1)
+    except EmptyPage:
+        comments = paginator.page(paginator.num_pages)
+
     form = CommentForm()
     if request.method == 'POST':
         form = CommentForm(request.POST)
