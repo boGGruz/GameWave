@@ -14,4 +14,5 @@ urlpatterns = [
     path("mario/", views.mario, name="mario"),
     path("shadow-warrior/", views.shadow_warrior, name="shadow-warrior"),
     path("heroes/", views.heroes, name="heroes"),
+    path("comment_page/", views.comment_page, name="comment_page"),
 ]

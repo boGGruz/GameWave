@@ -1,6 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from .models import Post
+import random
+
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+
+from .forms import CommentForm
+from .models import Comment
+from users.models import Profile
 
 
 def index(request):
@@ -47,8 +52,16 @@ def heroes(request):
     return render(request, 'Site/heroes.html')
 
 
-def home(request):
-    context = {
-        'posts': Post.objects.all()
-    }
-    return render(request, 'Site/catalog.html', context)
+@login_required
+def comment_page(request):
+    comments = Comment.objects.all()
+    form = CommentForm()
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.user = request.user
+            comment.save()
+            return redirect('comment_page')
+
+    return render(request, 'Site/comments.html', {'form': form, 'comments': comments})

@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserRegisterForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
+from .models import Profile
+import random
 
 
 def register(request):
@@ -36,3 +38,7 @@ def profile(request):
     }
 
     return render(request, 'Site/profile.html', context)
+
+
+def generate_random_color():
+    return "#{:06x}".format(random.randint(0, 0xFFFFFF))

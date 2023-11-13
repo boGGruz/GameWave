@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{% static 'Site/css/registration.css' %}">
     <link rel="stylesheet" href="{% static 'Site/css/login.css' %}">
     <link rel="stylesheet" href="{% static 'Site/css/logout.css' %}">
+    <link rel="stylesheet" href="{% static 'Site/css/comments.css' %}">
     <script src="{% static 'Site/js/js-dos.js' %}"></script>
 
 </head>
@@ -28,7 +29,7 @@
             </a>
             <nav class="_header_navigation" aria-label="разделы сайт">
                 <a class="_header_navigation_item" href="{% url 'home' %}">Игры</a>
-                <a class="_header_navigation_item" href="#">Отзывы</a>
+                <a class="_header_navigation_item" href="{% url 'comment_page' %}">Комментарии</a>
                 <a class="_header_navigation_item" href="{% url 'about' %}">О сайте</a>
             </nav>
             <div class="_header_right_buttons">
