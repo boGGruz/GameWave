@@ -10,34 +10,33 @@
             <form method="post" action="{% url 'comment_page' %}" class="comment-form">
                 {% csrf_token %}
                 {{ form.comment_text }}
-                <button class="add-comment__button" type="submit">Оставить комментарий</button>
+                <button class="add-comment__button" type="submit">Отправить</button>
             </form>
-
-            {% for comment in comments %}
-                <div class="comment">
-                    <p class="comment-username"
-                       style="color: {{ comment.user.userprofile.nickname_color }}">{{ comment.user.username }}:
-                        &nbsp</p>
-                    <p class="comment-text">{{ comment.comment_text }}</p>
-                </div>
-            {% endfor %}
-                <div class="pagination">
+            <div class="comments-container">
+                {% for comment in comments %}
+                    <p class="comment">
+                        <strong style="color: {{ comment.user.profile.nickname_color }};">{{ comment.user.username }}:</strong>
+                        {{ comment.comment_text }}
+                    </p>
+                {% endfor %}
+            </div>
+            <div class="pagination">
                     <span class="step-links">
                         {% if comments.has_previous %}
-                            <a href="?page=1">&laquo; первая</a>
-                            <a href="?page={{ comments.previous_page_number }}">предыдущая</a>
+                            <a href="?page=1" class="first-page">&laquo; В начало</a>
+                            <a href="?page={{ comments.previous_page_number }}" class="previous-page">&lArr;</a>
                         {% endif %}
 
                         <span class="current">
-                            Страница {{ comments.number }} из {{ comments.paginator.num_pages }}.
+                            &nbsp&nbsp&nbsp&nbsp&nbspСтраница {{ comments.number }} из {{ comments.paginator.num_pages }}
                         </span>
 
                         {% if comments.has_next %}
-                            <a href="?page={{ comments.next_page_number }}">следующая</a>
-                            <a href="?page={{ comments.paginator.num_pages }}">последняя &raquo;</a>
+                            <a href="?page={{ comments.next_page_number }}" class="next-page">&rArr;</a>
+                            <a href="?page={{ comments.paginator.num_pages }}" class="last-page">Последняя &raquo;</a>
                         {% endif %}
                     </span>
-                </div>
+            </div>
         </div>
     </div>
 

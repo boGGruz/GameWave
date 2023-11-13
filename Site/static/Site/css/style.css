@@ -161,4 +161,5 @@ button:hover{
     cursor: pointer;
     border-radius: 5px;
     bottom:10px;
+    padding: 5px 10px;
 }

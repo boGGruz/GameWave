@@ -20,25 +20,24 @@
 
 .comments-title {
     color: rgb(220, 230, 235);
-    margin-top: 2vh;
-    margin-left: 1vw;
-    margin-bottom: 0;
+    margin: 0;
     font-size: 3vw;
     font-weight: 900;
 }
 
-.comment {
-    color: rgb(220, 230, 235);
+.comments-container {
+    margin-bottom: 10px;
     margin-left: 1vw;
-    display: flex;
-    flex-direction: row;
-    margin-top: 0;
 }
 
-.comment-username {
-    font-size: 1.5vw;
-    font-weight: 900;
-    color: rgb(173, 255, 47);
+.comment {
+    margin-bottom: 5px;
+}
+
+.comment strong {
+    margin-right: 5px; /* Регулируйте это значение по своему усмотрению */
+    display: inline-block;
+    font-size: 1vw;
 }
 
 .comment-text {
@@ -81,4 +80,56 @@
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+.first-page {
+    position: relative;
+    text-decoration: none;
+    background: darkcyan;
+    color: rgb(220, 230, 235);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 1vw;
+    padding: 5px 10px;
+}
+
+.previous-page {
+    position: relative;
+    text-decoration: none;
+    background: darkcyan;
+    color: rgb(220, 230, 235);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 1vw;
+    padding: 5px 10px;
+}
+
+.next-page {
+    position: relative;
+    text-decoration: none;
+    background: darkcyan;
+    color: rgb(220, 230, 235);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 1vw;
+    padding: 5px 10px;
+}
+
+.last-page {
+    position: relative;
+    text-decoration: none;
+    background: darkcyan;
+    color: rgb(220, 230, 235);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 1vw;
+    padding: 5px 10px;
+}
+
+.comment-form textarea {
+    resize: none;
 }
