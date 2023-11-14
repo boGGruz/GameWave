@@ -1,44 +1,42 @@
 {% extends 'Site/base.html' %}
 {% load static %}
 {% block content %}
+    <head>
+        <script src="{% static 'Site/js/script.js' %}"></script>
+    </head>
     <body>
-    <div class="_main1">
+    <div class="_main2">
         <div class="content">
             <h1 class="comments-title">Комментарии</h1>
 
-            <h2 class="add-comment">Оставить комментарий</h2>
-            <form method="post" action="{% url 'comment_page' %}" class="comment-form">
+            <div class="comments-wrapper">
+                <div class="comments-container">
+                    {% for comment in comments reversed %}
+                        <p class="comment">
+                            <strong style="color: {{ comment.user.profile.nickname_color }};">{{ comment.user.username }}:</strong>
+                            {{ comment.comment_text }}
+                        </p>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <form method="post" action="{% url 'comment_page' %}" class="comment-form" id="commentForm">
                 {% csrf_token %}
-                {{ form.comment_text }}
-                <button class="add-comment__button" type="submit">Отправить</button>
+                <div class="form-comment">
+                    {{ form.comment_text }}
+                    <button class="add-comment__button" type="submit">&#10148;</button>
+                </div>
             </form>
-            <div class="comments-container">
-                {% for comment in comments %}
-                    <p class="comment">
-                        <strong style="color: {{ comment.user.profile.nickname_color }};">{{ comment.user.username }}:</strong>
-                        {{ comment.comment_text }}
-                    </p>
-                {% endfor %}
-            </div>
-            <div class="pagination">
-                    <span class="step-links">
-                        {% if comments.has_previous %}
-                            <a href="?page=1" class="first-page">&laquo; В начало</a>
-                            <a href="?page={{ comments.previous_page_number }}" class="previous-page">&lArr;</a>
-                        {% endif %}
-
-                        <span class="current">
-                            &nbsp&nbsp&nbsp&nbsp&nbspСтраница {{ comments.number }} из {{ comments.paginator.num_pages }}
-                        </span>
-
-                        {% if comments.has_next %}
-                            <a href="?page={{ comments.next_page_number }}" class="next-page">&rArr;</a>
-                            <a href="?page={{ comments.paginator.num_pages }}" class="last-page">Последняя &raquo;</a>
-                        {% endif %}
-                    </span>
-            </div>
         </div>
     </div>
 
+    <script>
+        document.getElementById("commentForm").addEventListener("keydown", function (e) {
+            if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                document.getElementById("commentForm").submit();
+            }
+        });
+    </script>
     </body>
 {% endblock %}

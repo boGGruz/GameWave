@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
-from django.contrib import messages
 from .forms import UserRegisterForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
-from .models import Profile
 import random
+from django.contrib.auth.models import User
 
 
 def register(request):
@@ -21,12 +20,9 @@ def register(request):
 @login_required
 def profile(request):
     if request.method == 'POST':
-        p_form = ProfileUpdateForm(request.POST,
-                                   request.FILES,
-                                   instance=request.user.profile)
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
         if p_form.is_valid():
             p_form.save()
-            messages.success(request, f'Ваш профиль успешно обновлен.')
             return redirect('profile')
 
     else:
