@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Поиск игр по фильтру, по жанрам и платформам | GameWave</title>
+    <title> GameWave </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com%22%3E">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,14 +30,14 @@
             </a>
             <nav class="_header_navigation" aria-label="разделы сайт">
                 <a class="_header_navigation_item" href="{% url 'home' %}">Игры</a>
-                <a class="_header_navigation_item" href="{% url 'comment_page' %}">Комментарии</a>
+                <a class="_header_navigation_item" href="{% url 'comment_page' %}">Чат</a>
                 <a class="_header_navigation_item" href="{% url 'about' %}">О сайте</a>
             </nav>
             <div class="_header_right_buttons">
                 {% if user.is_authenticated %}
                     <button class="_header__btns" aria-label="Личный кабинет" href="#">
-                        <a href="{% url 'profile' %}"><img src="{% static 'Site/img/user.png' %}" alt="" height="30px"
-                                                           width="30px"></a>
+                        <a href="{% url 'profile' %}"><img class="img-icon" src="{{ user.profile.image.url }}" alt="" height="35px"
+                                                           width="35px"></a>
                     </button>
                     <a class="nav-item nav-link__exit" href="{% url 'logout' %}">Выход</a>
                 {% else %}

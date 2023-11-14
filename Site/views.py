@@ -3,8 +3,7 @@ from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .forms import CommentForm
 from .models import Comment
-from django.utils import timezone
-from users.models import Profile
+
 
 def index(request):
     return render(request, 'Site/catalog.html')
@@ -63,7 +62,6 @@ def comment_page(request):
         comments = paginator.page(1)
     except EmptyPage:
         comments = paginator.page(paginator.num_pages)
-
     form = CommentForm()
     if request.method == 'POST':
         form = CommentForm(request.POST)
@@ -74,14 +72,3 @@ def comment_page(request):
             return redirect('comment_page')
 
     return render(request, 'Site/comments.html', {'form': form, 'comments': comments})
-
-
-def user_stats(request):
-    user = request.user
-    date_joined = user.date_joined
-    days_on_site = (timezone.now() - date_joined).days
-    context = {
-        'days_on_site': days_on_site,
-    }
-
-    return render(request, 'Site/profile.html', context)

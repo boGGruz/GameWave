@@ -24,15 +24,13 @@
 
             <div class="stats-grid">
                 <section class="profile-content">
-                    <div class="top-header">
-                        <h2 class="my-top__header">Библиотека</h2>
-                        <a href="" class="my-top__row">0 игр добавлено</a>
-                    </div>
                     <div class="stats-container__header">
-                        <h2 class="stats-container__header__description">Статистика
+                        <h2 class="stats-container__header__description">Обо мне
                         </h2>
                         <div class="stats-container__column">
-                            <span class="stats-container">{{ days_on_site }} дней на сайте </span>
+                            <span class="stats-container">Имя пользователя: {{ user.username }} </span>
+                            <span class="stats-container">Почта: {{ user.email }} </span>
+                            <span class="stats-container">Дата регистрации: {{ user.date_joined }} </span>
                         </div>
                     </div>
                 </section>

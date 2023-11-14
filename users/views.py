@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import UserRegisterForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
 import random
-from django.contrib.auth.models import User
+from django.utils import timezone
 
 
 def register(request):

@@ -56,6 +56,13 @@ button:hover{
     border-radius: 20px;
 }
 
+.img-icon {
+    border-radius: 100px;
+    position: relative;
+    top: 3px;
+    box-shadow: 0 0 5px black;
+}
+
 ._main {
     background-image: url('../img/background_1.webp');
     background-size: cover;
